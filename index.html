@@ -8,13 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body class="bg-body-primary">
 
   <nav class="navbar navbar-expand-lg bg-body-secondary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Student Information System</a>
+      <a class="navbar-brand fw-semibold" href="#">Student Information System</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,7 +30,7 @@
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
@@ -42,13 +43,13 @@
 
         <div class="mb-4">
           <h3>Student Records</h3>
-          <div class="d-flex justify-content-end">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addUserModal">Add Student</button>
-          </div>
         </div>
 
         <div class="row">
-          <table class="table align-middle text-center table-borderless">
+          <div class="d-flex justify-content-end mb-4">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addUserModal">Add Student</button>
+          </div>
+          <table class="table align-middle text-center table-borderless header-divider">
             <thead>
               <tr>
                 <th scope="col">Full Name</th>
@@ -63,12 +64,17 @@
               <tr>
                 <td>Earl Jeno Garcia</td>
                 <td>2024998</td>
-                <td>BIST</td>
+                <td>BSIT</td>
                 <td>2nd Year</td>
                 <td>earljenogarcia12@gmail.com</td>
                 <td>
                   <!-- <button class="btn btn-primary">View</button> -->
-                  <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editUserModal">Edit</button>
+                  <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">
+                    <i class="bi bi-trash"></i>
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -188,9 +194,33 @@
 
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Update</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm Delete Modal -->
+  <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div class="modal-title">Deleter User <span id="deleteWho"></span></div>
+        </div>
+
+        <div class="modal-body">
+
+          <div>
+            <p>Are you sure you want to delete [TO DO]? This action cannot be undone."</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-danger" id="deleteConfirmed">Delete</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
       </div>
     </div>
   </div>

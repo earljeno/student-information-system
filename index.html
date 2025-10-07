@@ -15,7 +15,7 @@
 
   <nav class="navbar navbar-expand-lg bg-body-secondary">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="#">Student Information System</a>
+      <a class="navbar-brand fw-semibold" href="index.html">Student Information System</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
 
         <div class="row">
           <div class="d-flex justify-content-end mb-4">
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addUserModal">Add Student</button>
+            <button class="btn btn-success" id="addStudentBtn" data-bs-toggle="modal" data-bs-target="#addStudentModal">Add Student</button>
           </div>
           <table class="table align-middle text-center table-borderless header-divider">
             <thead>
@@ -60,24 +60,7 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Earl Jeno Garcia</td>
-                <td>2024998</td>
-                <td>BSIT</td>
-                <td>2nd Year</td>
-                <td>earljenogarcia12@gmail.com</td>
-                <td>
-                  <!-- <button class="btn btn-primary">View</button> -->
-                  <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tableData"></tbody>
           </table>
         </div>
       </div>
@@ -87,7 +70,7 @@
   </div>
 
   <!-- Add Student Modal -->
-  <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="addStudentModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -95,7 +78,7 @@
           <h5 class="modal-title">Add User</h5>
         </div>
 
-        <form action="" id="addUserForm">
+        <form action="" id="addStudentForm">
           <div class="modal-body">
             <div class="row">
               <div class="col-md-8 mb-3">
@@ -104,7 +87,7 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label class="form-label" for="idInput">ID No.</label>
-                <input class="form-control" type="text" name="idInput" id="idInput" maxlength="8" readonly required>
+                <input class="form-control" type="text" name="idInput" id="idInput" maxlength="8" required>
               </div>
             </div>
 
@@ -134,7 +117,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Add Student</button>
+            <button type="submit" id="addStudentBtn" class="btn btn-primary">Add Student</button>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           </div>
         </form>
@@ -229,7 +212,7 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <script async src="script.js" defer></script>
 </body>
 
 </html>
